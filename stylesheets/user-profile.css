@@ -1,0 +1,207 @@
+:root {
+    --primary-color: #ff4500;
+    --background-dark: #1a1a1a;
+    --text-color: #ffffff;
+    --card-background: rgba(255, 255, 255, 0.1);
+    --hover-color: rgba(255, 255, 255, 0.15);
+    --button-hover: #c83400;
+}
+
+/* General*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--background-dark);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+}
+
+/* Authentication container (for Login/Signup) */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 40px 0;
+}
+
+/* Authentication Box (The Card Login/Signup) */
+.auth-box {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Login/Signup Navigation */
+.auth-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-bottom: 2px solid transparent;
+}
+.tab:hover{
+    color: rgb(212, 210, 210);
+}
+
+.tab.active {
+    border-bottom: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Styling for Form (Login and Signup) */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/*Label on the top of the input fields*/
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* Button Styling */
+.btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--button-hover);
+}
+
+/* Footer links of the form */
+.auth-footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.auth-footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile Responsive Auth Forms */
+@media (max-width: 480px) {
+    .auth-box {
+        padding: 20px;
+    }
+    
+    .form-group input, .btn {
+        padding: 10px;
+    }
+}
+
+/* Notification Toast System */
+.toast-notification {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border-left: 4px solid var(--primary-color);
+}
+
+.toast-notification.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.toast-content {
+    flex: 1;
+}
+
+.toast-title {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.toast-message {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.toast-close {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.toast-close:hover {
+    opacity: 1;
+}
+
+
+/* notification mobile responsivness */
+@media (max-width: 480px) {
+    .toast-notification {
+        bottom: 20px;
+        right: 20px;
+        left: 20px;
+        padding: 12px 15px;
+    }
+}
+

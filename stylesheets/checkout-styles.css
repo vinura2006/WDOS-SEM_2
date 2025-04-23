@@ -1,0 +1,543 @@
+:root {
+  --primary-color: #FF4500;
+  --primary-hover: #FF6A33;
+  --primary-active: #E03E00;
+  --text-color: #F0F0F0;
+  --text-secondary: #BBBBBB;
+  --text-dark: #1A1A1A;
+  --background-color: #1A1A1A;
+  --background-secondary: #252525;
+  --background-tertiary: #333333;
+  --border-color: #3F3F3F;
+  --border-active: #FF6A33;
+}
+
+/* Base styles */
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+body {
+background-color: var(--background-color);
+color: var(--text-color);
+font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+line-height: 1.6;
+margin: 0;
+padding: 0;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+.container {
+width: 100%;
+max-width: 1200px;
+padding: 1rem;
+margin: 0 auto;
+}
+
+/* Header styles */
+.header {
+text-align: center;
+margin-bottom: 2rem;
+}
+
+.header h1 {
+font-size: 2rem;
+margin-bottom: 0.5rem;
+color: var(--text-color);
+font-weight: 600;
+}
+
+.header p {
+color: var(--text-secondary);
+margin-bottom: 1.5rem;
+}
+
+/* Progress indicator */
+.progress-container {
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 2rem 0;
+}
+
+.progress-step {
+display: flex;
+flex-direction: column;
+align-items: center;
+position: relative;
+width: 100px;
+}
+
+.step-number {
+background-color: var(--background-tertiary);
+color: var(--text-secondary);
+width: 35px;
+height: 35px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: bold;
+margin-bottom: 0.5rem;
+border: 2px solid var(--border-color);
+transition: all 0.3s ease;
+z-index: 2;
+}
+
+.step-text {
+color: var(--text-secondary);
+font-size: 0.85rem;
+text-align: center;
+transition: color 0.3s ease;
+}
+
+.progress-line {
+flex-grow: 1;
+height: 3px;
+background-color: var(--border-color);
+margin: 0 -10px;
+position: relative;
+top: -17px;
+z-index: 1;
+transition: background-color 0.3s ease;
+max-width: 100px;
+}
+
+/* Procedure steps styles */
+.progress-step.active .step-number {
+background-color: var(--primary-color);
+border-color: var(--primary-color);
+color: var(--text-color);
+box-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
+}
+
+.progress-step.active .step-text {
+color: var(--text-color);
+font-weight: 500;
+}
+
+.progress-line.active {
+background: linear-gradient(to right, #4CAF50, var(--primary-color));
+}
+
+/* Completed styles */
+.progress-step.completed .step-number {
+background-color: #4CAF50;
+border-color: #4CAF50;
+color: var(--text-color);
+}
+
+.progress-step.completed .step-text {
+color: var(--text-color);
+}
+
+.progress-line.completed {
+background-color: #4CAF50;
+}
+
+/* Checkout  */
+.checkout-container {
+display: flex;
+flex-direction: column;
+gap: 2rem;
+margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+.checkout-container {
+  flex-direction: row;
+}
+}
+
+/* Form section */
+.form-section {
+flex: 1;
+background-color: var(--background-secondary);
+border-radius: 12px;
+padding: 2rem;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+margin-bottom: 1.5rem;
+transition: transform 0.2s ease;
+}
+
+.form-section:hover {
+transform: translateY(-2px);
+}
+
+/* Section title */
+.section-title {
+display: flex;
+align-items: center;
+margin-bottom: 1.5rem;
+border-bottom: 1px solid var(--border-color);
+padding-bottom: 1rem;
+}
+
+.section-number {
+background-color: var(--primary-color);
+color: var(--text-color);
+width: 30px;
+height: 30px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: bold;
+margin-right: 1rem;
+}
+
+.section-title h2 {
+color: var(--text-color);
+font-size: 1.5rem;
+font-weight: 500;
+}
+
+/* Form groups */
+.form-group {
+margin-bottom: 1.5rem;
+}
+
+label {
+display: block;
+margin-bottom: 0.5rem;
+color: var(--text-color);
+font-weight: 500;
+}
+
+input,
+select {
+width: 100%;
+padding: 1rem;
+background-color: var(--background-tertiary);
+border: 1px solid var(--border-color);
+border-radius: 8px;
+color: var(--text-color);
+font-size: 1rem;
+transition: all 0.2s ease;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+outline: none;
+}
+
+input:focus,
+select:focus {
+border-color: var(--primary-color);
+box-shadow: 0 0 0 2px rgba(255, 69, 0, 0.2);
+}
+
+input.invalid,
+select.invalid {
+border-color: #FF4747;
+box-shadow: 0 0 0 2px rgba(255, 71, 71, 0.2);
+}
+
+.error {
+color: #FF4747;
+font-size: 0.85rem;
+margin-top: 0.25rem;
+display: none;
+}
+
+/* layout styles for expiry date and CVV */
+.expiry-cvv {
+display: flex;
+gap: 1rem;
+}
+
+.expiry-cvv .form-group {
+flex: 1;
+}
+
+/* Card icons demonstration */
+.card-icons {
+display: flex;
+gap: 1rem;
+margin-bottom: 1.5rem;
+}
+
+.card-icon {
+background-color: var(--background-tertiary);
+padding: 0.5rem 1rem;
+border-radius: 4px;
+font-weight: bold;
+font-size: 0.85rem;
+color: var(--text-secondary);
+border: 1px solid var(--border-color);
+}
+
+/* Buttons */
+.button {
+background-color: var(--primary-color);
+color: var(--text-color);
+border: none;
+border-radius: 8px;
+padding: 1rem 2rem;
+font-size: 1rem;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.2s ease;
+display: inline-block;
+text-align: center;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.button:hover {
+background-color: var(--primary-hover);
+transform: translateY(-2px);
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.button:active {
+background-color: var(--primary-active);
+transform: translateY(0);
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.button.secondary {
+background-color: transparent;
+border: 1px solid var(--primary-color);
+color: var(--primary-color);
+}
+
+.button.secondary:hover {
+background-color: rgba(255, 69, 0, 0.1);
+}
+
+.navigation-buttons {
+display: flex;
+gap: 1rem;
+margin-top: 2rem;
+}
+
+/* Order summary specifications */
+.order-summary {
+width: 100%;
+background-color: var(--background-secondary);
+border-radius: 12px;
+padding: 1.5rem;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+height: fit-content;
+font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+.order-summary {
+  width: 300px;
+}
+}
+
+.order-summary h2 {
+margin-bottom: 1rem;
+color: var(--text-color);
+font-size: 1.3rem;
+font-weight: 500;
+border-bottom: 1px solid var(--border-color);
+padding-bottom: 0.5rem;
+}
+
+.order-items {
+margin-bottom: 1rem;
+max-height: 200px;
+overflow-y: auto;
+scrollbar-width: thin;
+scrollbar-color: var(--primary-color) var(--background-tertiary);
+}
+
+.item {
+display: flex;
+justify-content: space-between;
+margin-bottom: 0.25rem;
+padding: 0.25rem 0;
+font-size: 0.85rem;
+}
+
+.item.total {
+margin-top: 0.5rem;
+padding-top: 0.5rem;
+border-top: 1px solid var(--border-color);
+font-weight: bold;
+font-size: 1.1rem;
+}
+
+/* Product items in the order page/ and the summery */
+.product-item {
+display: flex;
+gap: 0.5rem;
+padding: 0.25rem 0;
+border-bottom: 1px solid var(--border-color);
+font-size: 0.85rem;
+}
+
+.product-info {
+flex: 1;
+}
+
+.product-name {
+font-weight: 500;
+font-size: 0.85rem;
+}
+
+.product-price {
+color: var(--text-secondary);
+font-size: 0.8rem;
+}
+
+.product-quantity {
+color: var(--text-secondary);
+font-size: 0.8rem;
+}
+
+/* Image in the order summary */
+.order-summary img {
+max-width: 100%;
+height: auto;
+max-height: 150px;
+object-fit: contain;
+border-radius: 4px;
+}
+
+.item {
+display: flex;
+justify-content: space-between;
+margin-bottom: 0.5rem;
+padding: 0.5rem 0;
+}
+
+.item.total {
+margin-top: 1rem;
+padding-top: 1rem;
+border-top: 1px solid var(--border-color);
+font-weight: bold;
+font-size: 1.2rem;
+}
+
+/* Customer information */
+.customer-info-review {
+background-color: var(--background-tertiary);
+border-radius: 8px;
+padding: 1.5rem;
+margin: 2rem 0;
+}
+
+.customer-info-review h3 {
+margin-bottom: 1rem;
+font-weight: 500;
+color: var(--text-color);
+}
+
+.review-section {
+margin-bottom: 1rem;
+}
+
+.review-section h4 {
+font-size: 1rem;
+margin-bottom: 0.5rem;
+color: var(--text-secondary);
+font-weight: 500;
+}
+
+.review-section p {
+margin-bottom: 0.25rem;
+}
+
+/* Successfull message comes after done the payment */
+.success-message {
+text-align: center;
+background-color: rgba(76, 175, 80, 0.1);
+border: 1px solid #4CAF50;
+border-radius: 12px;
+padding: 2rem;
+margin: 2rem 0;
+}
+
+.success-message h2 {
+color: #4CAF50;
+margin-bottom: 1rem;
+}
+
+.success-message p {
+margin-bottom: 1.5rem;
+}
+
+/* Successfull message comes after done the payment */
+.success-message {
+  text-align: center;
+  background-color: rgba(76, 175, 80, 0.1);
+  border: 1px solid #4CAF50;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.success-message h2 {
+  color: #4CAF50;
+  margin-bottom: 1rem;
+}
+
+.success-message p {
+  margin-bottom: 1.5rem;
+}
+
+/*Page Changing Transition*/
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-section, .order-summary {
+  animation: fadeIn 0.8s ease-out; 
+}
+
+/* mobile responsive adjs*/
+@media (max-width: 767px) {
+  .navigation-buttons {
+    flex-direction: column;
+  }
+  
+  .expiry-cvv {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .progress-step {
+    width: 80px;
+  }
+  
+  .progress-line {
+    max-width: 60px;
+  }
+  
+  .checkout-container {
+    gap: 1rem;
+  }
+}
+/* Field lable hover effect-----------------------------*/
+.form-group:hover label {
+  color: var(--primary-color);
+}
+
+.error {
+  transition: all 0.2s ease;
+  height: 0;
+  overflow: hidden;
+}
+
+.error:not([style*="display: none"]) {
+  height: auto;
+  margin-top: 0.25rem;
+}

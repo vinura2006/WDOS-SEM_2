@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Delivery Information</title>
+    <link rel="stylesheet" href="./stylesheets/checkout-styles.css">
+    <script src="./javascripts/checkout-common.js" defer></script>
+    <script src="./javascripts/checkout-deliveryinfor.js" defer> </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Complete Your Order</h1>
+            <p>Please provide your delivery information (Step 2 of 3)</p>
+            
+            <!-- Progress indicator -->
+            <div class="progress-container">
+                <div class="progress-step completed">
+                    <div class="step-number">✓</div>
+                    <div class="step-text">Personal Info</div>
+                </div>
+                <div class="progress-line active"></div>
+                <div class="progress-step active">
+                    <div class="step-number">2</div>
+                    <div class="step-text">Delivery</div>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step">
+                    <div class="step-number">3</div>
+                    <div class="step-text">Payment</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="checkout-container">
+            <div class="form-section">
+                <form id="delivery-info-form">
+                    <div>
+                        <div class="section-title">
+                            <div class="section-number">2</div>
+                            <h2>Delivery Information</h2>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="address">Street Address </label>
+                            <input type="text" id="address" name="address" required>
+                            <div class="error" id="address-error">Please enter your street address</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="city">City </label>
+                            <input type="text" id="city" name="city" required>
+                            <div class="error" id="city-error">Please enter your city</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="zip">ZIP/Postal Code </label>
+                            <input type="text" id="zip" name="zip" required>
+                            <div class="error" id="zip-error">Please enter a valid zip code</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="country">Country </label>
+                            <select id="country" name="country" required>
+                                <option value="">Select a country</option>
+                                <option value="US">United States</option>
+                                <option value="CA">Canada</option>
+                                <option value="UK">United Kingdom</option>
+                                <option value="AU">Australia</option>
+                                <option value="SL">Sri Lanka</option>
+                            </select>
+                            <div class="error" id="country-error">Please select a country</div>
+                        </div>
+                    </div>
+                    
+                    <div class="navigation-buttons">
+                        <button type="button" class="button secondary" onclick="window.location.href='personal-info.html'">Back to Personal Info</button>
+                        <button type="submit" class="button">Continue to Payment</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="order-summary" id="order-summary">
+                <h2>Order Summary</h2>
+                
+                <div id="order-items" class="order-items">
+                    <!-- Cart items from localStorage -->
+                </div>
+                
+                <div class="item">
+                    <span>Subtotal</span>
+                    <span id="subtotal">$0.00</span>
+                </div>
+                
+                <div class="item">
+                    <span>Shipping</span>
+                    <span id="shipping">$5.99</span>
+                </div>
+                
+                <div class="item">
+                    <span>Tax (8%)</span>
+                    <span id="tax">$0.00</span>
+                </div>
+                
+                <div class="item total">
+                    <span>Total</span>
+                    <span id="total">$0.00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

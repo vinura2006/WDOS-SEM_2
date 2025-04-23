@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Personal Information</title>
+    <link rel="stylesheet" href="stylesheets/checkout-styles.css">
+    <script src="./javascripts/checkout-common.js" derfer></script>
+    <script src="./javascripts/checkout-personal-infor.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Complete Your Order</h1>
+            <p>Please provide your personal information to continue (Step 1 of 3)</p>
+            
+            <!-- Progress indicator -->
+            <div class="progress-container">
+                <div class="progress-step active">
+                    <div class="step-number">1</div>
+                    <div class="step-text">Personal Info</div>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step">
+                    <div class="step-number">2</div>
+                    <div class="step-text">Delivery</div>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step">
+                    <div class="step-number">3</div>
+                    <div class="step-text">Payment</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="checkout-container">
+            <div class="form-section">
+                <form id="personal-info-form">
+                    <div>
+                        <div class="section-title">
+                            <div class="section-number">1</div>
+                            <h2>Personal Information</h2>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="fullname">Full Name *</label>
+                            <input type="text" id="fullname" name="fullname" required>
+                            <div class="error" id="fullname-error">Please enter your full name</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                            <div class="error" id="email-error">Please enter a valid email address</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                            <div class="error" id="phone-error">Please enter a valid phone number</div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="button">Continue to Delivery</button>
+                </form>
+            </div>
+            
+            <div class="order-summary" id="order-summary">
+                <h2>Order Summary</h2>
+                
+                <div id="order-items" class="order-items">
+                    <!-- Cart items from localStorage -->
+                </div>
+                
+                <div class="item">
+                    <span>Subtotal</span>
+                    <span id="subtotal">$0.00</span>
+                </div>
+                
+                <div class="item">
+                    <span>Shipping</span>
+                    <span id="shipping">$5.99</span>
+                </div>
+                
+                <div class="item">
+                    <span>Tax (8%)</span>
+                    <span id="tax">$0.00</span>
+                </div>
+                
+                <div class="item total">
+                    <span>Total</span>
+                    <span id="total">$0.00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

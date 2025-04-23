@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Payment Information</title>
+    <link rel="stylesheet" href="./stylesheets/checkout-styles.css">
+    <script src="./javascripts/checkout-common.js" defer></script>
+    <script src="./javascripts/checkout-payment-info.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Complete Your Order</h1>
+            <p>Please provide your payment information to complete your order (Step 3 of 3)</p>
+            
+            <!-- Progress indicator section -->
+            <div class="progress-container">
+                <div class="progress-step completed">
+                    <div class="step-number">✓</div>
+                    <div class="step-text">Personal Info</div>
+                </div>
+                <div class="progress-line completed"></div>
+                <div class="progress-step completed">
+                    <div class="step-number">✓</div>
+                    <div class="step-text">Delivery</div>
+                </div>
+                <div class="progress-line active"></div>
+                <div class="progress-step active">
+                    <div class="step-number">3</div>
+                    <div class="step-text">Payment</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="checkout-container">
+            <div class="form-section">
+                <form id="payment-info-form">
+                    <div>
+                        <div class="section-title">
+                            <div class="section-number">3</div>
+                            <h2>Payment Information</h2>
+                        </div>
+                        
+                        <div class="card-icons">
+                            <div class="card-icon">VISA</div>
+                            <div class="card-icon">MC</div>
+                            <div class="card-icon">AMEX</div>
+                            <div class="card-icon">DISC</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cardname">Name on Card *</label>
+                            <input type="text" id="cardname" name="cardname" required>
+                            <div class="error" id="cardname-error">Please enter the name on your card</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cardnumber">Card Number *</label>
+                            <input type="text" id="cardnumber" name="cardnumber" placeholder="XXXX XXXX XXXX XXXX" required>
+                            <div class="error" id="cardnumber-error">Please enter a valid card number</div>
+                        </div>
+                        
+                        <div class="expiry-cvv">
+                            <div class="form-group">
+                                <label for="expiry">Expiry Date *</label>
+                                <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+                                <div class="error" id="expiry-error">Please enter a valid expiry date</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="cvv">CVV *</label>
+                                <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                                <div class="error" id="cvv-error">Please enter your CVV</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="customer-info-review">
+                        <h3>Confirm Your Information</h3>
+                        <div id="personal-info-review" class="review-section">
+                            <h4>Personal Information</h4>
+                            <p id="review-name"></p>
+                            <p id="review-email"></p>
+                            <p id="review-phone"></p>
+                        </div>
+                        
+                        <div id="delivery-info-review" class="review-section">
+                            <h4>Delivery Address</h4>
+                            <p id="review-address"></p>
+                            <p id="review-city-zip"></p>
+                            <p id="review-country"></p>
+                        </div>
+                    </div>
+                    
+                    <div class="navigation-buttons">
+                        <button type="button" class="button secondary" onclick="window.location.href='delivery-info.html'">Back to Delivery</button>
+                        <button type="submit" class="button">Complete Payment</button>
+                    </div>
+                </form>
+                
+                <div class="success-message" id="success-message" style="display: none;">
+                    <h2>Payment Successful!</h2>
+                    <p>Thank you for your purchase. A confirmation email has been sent to your email address.</p>
+                    <button class="button" onclick="window.location.href='index.html'">Return to Home</button>
+                </div>
+            </div>
+            
+            <div class="order-summary" id="order-summary">
+                <h2>Order Summary</h2>
+                
+                <div id="order-items" class="order-items">
+                     <!-- Cart items from localStorage -->
+                </div>
+                
+                <div class="item">
+                    <span>Subtotal</span>
+                    <span id="subtotal">$0.00</span>
+                </div>
+                
+                <div class="item">
+                    <span>Shipping</span>
+                    <span id="shipping">$5.99</span>
+                </div>
+                
+                <div class="item">
+                    <span>Tax (8%)</span>
+                    <span id="tax">$0.00</span>
+                </div>
+                
+                <div class="item total">
+                    <span>Total</span>
+                    <span id="total">$0.00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

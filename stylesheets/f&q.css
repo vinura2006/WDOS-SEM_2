@@ -1,0 +1,316 @@
+:root {
+    --primary-color: #ff4500;
+    --background-dark: #121212;
+    --text-color: #ffffff;
+    --card-background: rgba(40, 40, 40, 0.95); 
+    --shadow-color: rgba(0, 0, 0, 0.5); 
+    --shadow-highlight: rgba(255, 69, 0, 0.3); 
+    --input-background: rgba(55, 55, 55, 0.95);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: var(--background-dark);
+  color: var(--text-color);
+}
+
+/* Page :- F&Q */
+.faq-page {
+    min-height: calc(100vh - 200px);
+    padding: 40px 0;
+    background-color: var(--background-dark);
+}
+
+/* FAQ Section */
+.faq-section {
+    margin-bottom: 60px;
+    margin-top: 90px;
+}
+
+.faq-section h1 {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 40px;
+    font-size: 28px; 
+    text-shadow: 1px 1px 3px var(--shadow-color); 
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--card-background);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 10px 30px var(--shadow-color); 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+}
+
+.faq-question {
+    padding: 18px;
+    color: var(--text-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.toggle-icon {
+    font-size: 20px;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+    text-shadow: 0 0 5px var(--shadow-highlight); 
+}
+
+.faq-item.active .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.faq-item.active {
+    background-color: rgba(255, 69, 0, 0.05); 
+    box-shadow: 0 3px 10px var(--shadow-color); 
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.faq-answer {
+    padding: 0 18px 18px;
+    color: rgba(255, 255, 255, 0.85); 
+    display: none;
+    line-height: 1.7;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+/* Contact Form */
+.contact-section {
+    padding: 50px 0;
+}
+
+.contact-form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--card-background);
+    border-radius: 10px;
+    padding: 35px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.contact-form-container h2 {
+    color: var(--primary-color); 
+    margin-bottom: 30px;
+    font-size: 24px;
+    text-shadow: 1px 1px 3px var(--shadow-color); 
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    background: var(--input-background);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2), 0 0 5px var(--shadow-highlight); 
+    outline: none;
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    display: block;
+    width: 200px;
+    margin: 30px auto 0;
+    padding: 14px;
+    background: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3); 
+}
+
+.submit-btn:hover {
+    background: #ff5a1f; 
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 18px var(--shadow-highlight);
+}
+
+.submit-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+    
+    .contact-form-container {
+        padding: 25px;
+    }
+    
+    .submit-btn {
+        width: 100%;
+    }
+    
+    .faq-section h1 {
+        font-size: 22px;
+        margin-bottom: 30px;
+    }
+    
+    .faq-question {
+        font-size: 16px;
+        padding: 15px;
+    }
+}
+
+/*----------------------------------------------------Toast Notification for the page---------------------------------------------------------------------*/
+
+.toast-notification {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border-left: 4px solid var(--primary-color);
+}
+
+.toast-notification.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.toast-content {
+    flex: 1;
+}
+
+.toast-title {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.toast-message {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.toast-close {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.toast-close:hover {
+    opacity: 1;
+}
+
+/* mobile responsing */
+@media (max-width: 900px) {
+    .upcoming-content {
+        flex-direction: column;
+    }
+
+    .left-box, .right-box {
+        width: 100%;
+    }
+
+    .left-box {
+        margin-bottom: 25px;
+    }
+
+    .description-box {
+        padding: 20px;
+    }
+
+    .release-info {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    section h2 {
+        font-size: 1.8rem;
+    }
+
+    .card-text {
+        font-size: 1.1rem;
+        top: 10px;
+        left: 10px;
+    }
+
+    .toast-notification {
+        bottom: 20px;
+        right: 20px;
+        left: 20px;
+        padding: 12px 15px;
+    }
+}
+/* Responsive adjustments for mobile  */
+@media (max-width: 768px) {
+    .upcoming-content {
+        flex-direction: column;
+    }
+
+    .left-box .add-to-cart-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
