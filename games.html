@@ -4,695 +4,227 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gaming Store</title>
-    <link rel="stylesheet" href="./stylesheets/games.css">
+    <link rel="stylesheet" href="./stylesheets/f&q.css">
     <link rel="stylesheet" href="./stylesheets/header.css">
+    <link rel="stylesheet" href="./stylesheets/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="manifest" href="site.manifest">
     <link rel="icon" type="image/png" href="./assest/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/svg+xml" href="./assest/favicon.svg">
     <link rel="shortcut icon" href="./assest/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="./assest/apple-touch-icon.png">
+    <script src="./javascripts/f&q-questionform.js" defer></script>
     <script src="./javascripts/navbar.js" defer></script>
-    <script src="./javascripts/script.js" defer></script>
-    <script src="./javascripts/cart.js" defer></script>
+    <script src="./javascripts/header.js" defer></script>
+    <script src="./javascripts/f&q.js" defer></script>
     <script src="javascripts/cart-item_count.js" defer></script>
 </head>
 <body>
-  <header>
-    <div class="header-main">
-        <div class="header-container">
-            <div class="logo">
-                <img src="./image/logo/logo.png" alt="GameTone, The logo of the website">
-            </div>
-
-            <nav class="main-nav">
-                <div class="nav-left">
-                    <a href="index.html" class="nav-link">Home</a>
-                    <a href="upcoming.html" class="nav-link">Upcoming</a>
-                    <div class="dropdown">
-                        <a class="nav-link">Accessories <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-content">
-                            <a href="consoles.html">Gaming Consoles</a>
-                            <a href="periphals.html">Gaming Peripherals</a>
+    <header>
+        <div class="header-main">
+            <div class="header-container">
+                <div class="logo">
+                    <img src="./image/logo/logo.png" alt="GameTone, The logo of the website">
+                </div>
+    
+                <nav class="main-nav">
+                    <div class="nav-left">
+                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="upcoming.html" class="nav-link">Upcoming</a>
+                        <div class="dropdown">
+                            <a class="nav-link">Accessories <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="consoles.html">Gaming Consoles</a>
+                                <a href="periphals.html">Gaming Peripherals</a>
+                            </div>
                         </div>
+                        <a href="games.html" class="nav-link">Games</a>
+                        <a href="f&q.html" class="nav-link active">FAQs</a>
+                        <a href="about.html" class="nav-link">About Us/Contact</a>
                     </div>
-                    <a href="games.html" class="nav-link active">Games</a>
-                    <a href="f&q.html" class="nav-link">FAQs</a>
-                    <a href="about.html" class="nav-link">About Us/Contact</a>
-                </div>
+    
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search..." aria-label="Search">
+                            <button class="search-btn" aria-label="Search">
+                                <i class="fas fa-search" aria-hidden="true"></i>
+                            </button>
+                    </div>
+                </nav>
 
-                <div class="search-container">
+                <!-- Mobile search bar -->
+                <div class="mobile-search-container">
                     <input type="text" class="search-input" placeholder="Search..." aria-label="Search">
-                        <button class="search-btn" aria-label="Search">
-                            <i class="fas fa-search" aria-hidden="true"></i>
-                        </button>
+                    <button class="search-btn" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+
                 </div>
-            </nav>
-
-            <!-- Mobile search bar -->
-            <div class="mobile-search-container">
-                <input type="text" class="search-input" placeholder="Search..." aria-label="Search">
-                <button class="search-btn" aria-label="Search">
-                    <i class="fas fa-search"></i>
+    
+                <div class="user-actions">
+                    <button class="cart-btn" aria-label="View Cart" onclick="location.href='cart.html';">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>                    
+                    <button class="user-btn" aria-label="User Profile" onclick="location.href='user-profile.html';">
+                        <i class="fas fa-user"></i>
+                    </button>
+                </div>
+    
+                <button class="hamburger-btn" aria-label="Open Menu">
+                    <i class="fas fa-bars"></i>
                 </button>
 
             </div>
-
-            <div class="user-actions">
-                <button class="cart-btn" aria-label="View Cart" onclick="location.href='cart.html';">
-                  <i class="fas fa-shopping-cart"></i>
-                </button>
-                <button class="user-btn" aria-label="User Profile" onclick="location.href='user-profile.html';">
-                    <i class="fas fa-user"></i>
-                </button>
-            </div>
-
-            <button class="hamburger-btn" aria-label="Open Menu">
-                <i class="fas fa-bars"></i>
+        </div>
+    
+        <!-- Mobile Navigation Menu -->
+        <div class="mobile-nav">
+            <button class="close-btn" aria-label="Close Menu">
+                <i class="fas fa-times"></i>
             </button>
 
+            
+            <ul class="mobile-nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="upcoming.html">Upcoming</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="consoles.html">Consoles</a></li>
+                <li><a href="periphals.html">Gaming peripherals</a></li>
+                <li><a href="f&q.html">Q & A</a></li>
+                <li><a href="about.html">About/Contact Us</a></li>
+            </ul>
+
+            <div class="mobile-nav-actions">
+                <a href="cart.html" class="mobile-action-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    Shopping Cart
+                </a>
+                <a href="404error.html" class="mobile-action-btn">
+                    <i class="fas fa-user"></i>
+                    My Profile
+                </a>
+            </div>
         </div>
-    </div>
-
-    <!-- Mobile Navigation Menu -->
-    <div class="mobile-nav">
-        <button class="close-btn" aria-label="Close Menu">
-            <i class="fas fa-times"></i>
-        </button>
-
+    </header>
+    <main class="faq-page">
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h1>FAQS</h1>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What is your shop name, I'm confused with the logo?
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            Answer: Our store logo is (GamTon)+E which means Game Tone. We created the name by combining a little bit of math.
+                        </div>
+                    </div>
         
-        <ul class="mobile-nav-list">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="upcoming.html">Upcoming</a></li>
-            <li><a href="games.html">Games</a></li>
-            <li><a href="consoles.html">Consoles</a></li>
-            <li><a href="periphals.html">Gaming peripherals</a></li>
-            <li><a href="f&q.html">Q & A</a></li>
-            <li><a href="about.html">About/Contact Us</a></li>
-        </ul>
-
-        <div class="mobile-nav-actions">
-            <a href="cart.html" class="mobile-action-btn">
-                <i class="fas fa-shopping-cart"></i>
-                Shopping Cart
-            </a>
-            <a href="user-profile.html" class="mobile-action-btn">
-                <i class="fas fa-user"></i>
-                My Profile
-            </a>
-        </div>
-    </div>
-</header>
-<main class="main-content">
-  <!--========================================================== Top Rated Games============================================= -->
-    <div class="games-container">
-        <section id="games-section" class="games-section">
-            <h2>Games Collection</h2>
-            <div class="games-grid">
-
-                <!-- Game 1 -->
-                <div class="game-card part-card" id="game1">
-                    <img src="./image/games/gameportrait8.jpeg" alt="Out of Laws" class="game-card-image">
-                    <div class="game-card-overlay">
-                        <div class="game-details-container">
-                            <div class="game-details">
-                                <h3 class="part-name">Out of Laws</h3>
-                                <p class="game-specs">Windows, Xbox, Playstation | 54GB</p>
-                                <p class="part-price">$1.99</p>
-                            </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Can I purchase any game at any time, Do you have stock?
+                            <span class="toggle-icon">▼</span>
                         </div>
-                        <div class="button-container">
-                          <button class="add-to-cart">Add to Cart</button>
-                          <button class="buy-now" onclick="window.location.href='404error.html'">Buy Now</button>
-                      </div>
+                        <div class="faq-answer">
+                            Please let us know the titles of the games, and we'll check our inventory for you. You can also visit our website to see the current stock availability.
+                        </div>
                     </div>
-                </div>
-
-                <!-- Game 2 -->
-                <div class="game-card part-card" id="game2">
-                    <img src="./image/games/gameportrait1.jpeg" alt="Blade" class="game-card-image">
-                    <div class="game-card-overlay">
-                        <div class="game-details-container">
-                            <div class="game-details">
-                                <h3 class="part-name">Blade</h3>
-                                <p class="game-specs">Xbox, Playstation | 19GB</p>
-                                <p class="part-price">$5.99</p>
-                            </div>
+        
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Do we give warranty for our products?
+                            <span class="toggle-icon">▼</span>
                         </div>
-                        <div class="button-container">
-                          <button class="add-to-cart">Add to Cart</button>
-                          <button class="buy-now" onclick="window.location.href='404error.html'">Buy Now</button>
-                      </div>
+                        <div class="faq-answer">
+                            Why do you ask that question? Our products are 1000% better when compared to other products in the market. Therefore we kindly inform that we never give warranty for our products.
+                        </div>
                     </div>
-                </div>
-
-                <!-- Game 3 -->
-                <div class="game-card part-card" id="game3">
-                    <img src="./image/games/gameportrait2.jpeg" alt="Assisan Creed" class="game-card-image">
-                    <div class="game-card-overlay">
-                        <div class="game-details-container">
-                            <div class="game-details">
-                                <h3 class="part-name">Assisan Creed</h3>
-                                <p class="game-specs">Windows, Xbox, Playstation | 69GB</p>
-                                <p class="part-price">$12.09</p>
-                            </div>
+        
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            I can't log in to my account
+                            <span class="toggle-icon">▼</span>
                         </div>
-                        <div class="button-container">
-                          <button class="add-to-cart">Add to Cart</button>
-                          <button class="buy-now" onclick="window.location.href='404error.html'">Buy Now</button>
-                      </div>
+                        <div class="faq-answer">
+                            Please contact our agent. You will be able to check out our branch. Go to the About Us page.
+                        </div>
                     </div>
-                </div>
-
-                <!-- Game 4 -->
-                <div class="game-card part-card" id="game4">
-                    <img src="./image/games/gameportrait3.jpeg" alt="Sonic Shadow" class="game-card-image">
-                    <div class="game-card-overlay">
-                        <div class="game-details-container">
-                            <div class="game-details">
-                                <h3 class="part-name">Sonic Shadow</h3>
-                                <p class="game-specs">Xbox, Playstation | 7GB</p>
-                                <p class="part-price">$15.96</p>
-                            </div>
+        
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            My order didn't receive!
+                            <span class="toggle-icon">▼</span>
                         </div>
-                        <div class="button-container">
-                          <button class="add-to-cart">Add to Cart</button>
-                          <button class="buy-now" onclick="window.location.href='404error.html'">Buy Now</button>
-                      </div>
+                        <div class="faq-answer">
+                            Please contact our agent. You will be able to check out our branch. Go to the About Us page.
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-    </div>
-
-    <!--=================================================Recomended Games section================================================-->
-    <div class="recommended-games-container">
-      <section id="recommended-games" class="games-section">
-          <h2>Recommended Games</h2>
-          <div class="games-grid">
-              <!-- Game 1 -->
-              <div class="game-card part-card" id="game5">
-                  <img src="./image/games/gameportrait.jpeg" alt="Ghost Recon" class="game-card-image">
-                  <div class="game-card-overlay">
-                      <div class="game-details-container">
-                          <div class="game-details">
-                              <h3 class="part-name">Ghost Recon</h3>
-                              <p class="game-specs">Windows | 9GB</p>
-                              <p class="part-price">$8.67</p>
-                          </div>
-                      </div>
-                      <div class="button-container">
-                        <button class="add-to-cart">Add to Cart</button>
-                        <button class="buy-now" onclick="window.location.href='404error.html'">Buy Now</button>
-                    </div>
-                  </div>
-              </div>
-
-              <!-- Game 2 -->
-              <div class="game-card part-card" id="game6">
-                  <img src="./image/games/gameportrait5.jpeg" alt="Octapath" class="game-card-image">
-                  <div class="game-card-overlay">
-                      <div class="game-details-container">
-                          <div class="game-details">
-                              <h3 class="part-name">Octapath</h3>
-                              <p class="game-specs">Windows, Xbox, Playstation | 19GB</p>
-                              <p class="part-price">$4.39</p>
-                          </div>
-                      </div>
-                      <div class="button-container">
-                        <button class="add-to-cart">Add to Cart</button>
-                        <button class="buy-now" onclick="window.location.href='404error.html'">Buy Now</button>
-                    </div>
-                  </div>
-              </div>
-
-              <!-- Game 3 -->
-              <div class="game-card part-card" id="game7">
-                  <img src="./image/games/gameportrait6.jpeg" alt="Paladings" class="game-card-image">
-                  <div class="game-card-overlay">
-                      <div class="game-details-container">
-                          <div class="game-details">
-                              <h3 class="part-name">Paladings</h3>
-                              <p class="game-specs">Windows, Playstation | 21GB</p>
-                              <p class="part-price">$100.99</p>
-                          </div>
-                      </div>
-                      <div class="button-container">
-                        <button class="add-to-cart">Add to Cart</button>
-                        <button class="buy-now" onclick="window.location.href='404error.html'">Buy Now</button>
-                    </div>
-                  </div>
-              </div>
-
-              <!-- Game 4 -->
-              <div class="game-card part-card" id="game8">
-                  <img src="./image/games/gameportrait7.webp" alt="Apex Legends" class="game-card-image">
-                  <div class="game-card-overlay">
-                      <div class="game-details-container">
-                          <div class="game-details">
-                              <h3 class="part-name">Apex Legends</h3>
-                              <p class="game-specs">Windows, Xbox, Mobile | 14GB</p>
-                              <p class="part-price">$60.12</p>
-                          </div>
-                      </div>
-                      <div class="button-container">
-                        <button class="add-to-cart">Add to Cart</button>
-                        <button class="buy-now" onclick="window.location.href='404error.html'">Buy Now</button>
-                    </div>
-                  </div>
-              </div>
-          </div>
-      </section>
-    </div>
-
-    <!--========================================================Special deals section ======================================================-->
-    <div class="special-deals-container">
-        <section id="special-deals" class="games-section">
-            <h2>Special Deals</h2>
-            <div class="games-grid">
-              
-                <!-- Game 1 -->
-                <div class="game-card part-card" id="game9">
-                    <img src="./image/games/gameportrait8.jpeg" alt="Left to Survive" class="game-card-image">
-                    <div class="game-card-overlay">
-                        <div class="game-details-container">
-                            <div class="game-details">
-                                <h3 class="part-name">Left to Survive</h3>
-                                <p class="game-specs">Windows, Xbox, Playstation | 10GB</p>
-                                <p class="part-price">$25</p>
-                            </div>
+        <!-- Contact Form-->
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-form-container">
+                    <h2>Questions</h2>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Name" required>
                         </div>
-                        <div class="button-container">
-                          <button class="add-to-cart">Add to Cart</button>
-                          <button class="buy-now" onclick="window.location.href='404error.html'">Buy Now</button>
-                      </div>
-                    </div>
-                </div>
-
-                <!-- Game 2 -->
-                <div class="game-card part-card" id="game10">
-                    <img src="./image/games/gameportrait10.webp" alt="Ghost Recon" class="game-card-image">
-                    <div class="game-card-overlay">
-                        <div class="game-details-container">
-                            <div class="game-details">
-                                <h3 class="part-name">Ghost Recon</h3>
-                                <p class="game-specs">Xbox, Playstation | 17GB</p>
-                                <p class="part-price">$5</p>
-                            </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Email" required>
                         </div>
-                        <div class="button-container">
-                          <button class="add-to-cart">Add to Cart</button>
-                          <button class="buy-now" onclick="window.location.href='404error.html'">Buy Now</button>
-                      </div>
-                    </div>
-                </div>
-
-                <!-- Game 3 -->
-                <div class="game-card part-card" id="game11">
-                    <img src="./image/games/gameportrait11.jpeg" alt="Fortnight" class="game-card-image">
-                    <div class="game-card-overlay">
-                        <div class="game-details-container">
-                            <div class="game-details">
-                                <h3 class="part-name">Fortnight</h3>
-                                <p class="game-specs">Windows | 6GB</p>
-                                <p class="part-price">$1.99</p>
-                            </div>
+                        
+                        <div class="form-group">
+                            <label for="question">Question</label>
+                            <textarea id="question" name="question" placeholder="Question" required></textarea>
                         </div>
-                        <div class="button-container">
-                          <button class="add-to-cart">Add to Cart</button>
-                          <button class="buy-now" onclick="window.location.href='404error.html'">Buy Now</button>
-                      </div>
-                    </div>
-                </div>
-
-                <!-- Game 4 -->
-                <div class="game-card part-card" id="game12">
-                    <img src="./image/games/gameportrait12.webp" alt="God of War" class="game-card-image">
-                    <div class="game-card-overlay">
-                        <div class="game-details-container">
-                            <div class="game-details">
-                                <h3 class="part-name">God of War</h3>
-                                <p class="game-specs">Windows, Xbox, Playstation | 68GB</p>
-                                <p class="part-price">$15</p>
-                            </div>
-                        </div>
-                        <div class="button-container">
-                          <button class="add-to-cart">Add to Cart</button>
-                          <button class="buy-now" onclick="window.location.href='404error.html'">Buy Now</button>
-                      </div>
-                    </div>
+                        
+                        <button type="submit" class="submit-btn" onclick="return false;">Submit</button>
+                    </form>
                 </div>
             </div>
         </section>
-    </div>
-
-    <!--============================================Faviourite Games section =========================================-->
-    <div class="favorites-games-container">
-      <section id="favorites-games" class="games-section">
-          <h2>All-Time Favorites</h2>
-          <div class="games-grid">
-              <!-- Game 1 -->
-              <div class="game-card part-card" id="fav-game1">
-                  <img src="./image/games/gameportrait19.jpg" alt="Sniper Ghost Warrior" class="game-card-image">
-                  <div class="game-card-overlay">
-                      <div class="game-details-container">
-                          <div class="game-details">
-                              <h3 class="part-name">Sniper Ghost Warrior</h3>
-                              <p class="game-specs">Windows, Xbox, Playstation | 10GB</p>
-                              <p class="part-price">$25</p>
-                          </div>
-                      </div>
-                      <div class="button-container">
-                        <button class="add-to-cart">Add to Cart</button>
-                        <button class="buy-now" onclick="window.location.href='404error.html'">Buy Now</button>
-                    </div>
-                  </div>
-              </div>
-
-              <!-- Game 2 -->
-              <div class="game-card part-card" id="fav-game2">
-                  <img src="./image/games/gameportrait20.jpeg" alt="Asphalt 9: Legends" class="game-card-image">
-                  <div class="game-card-overlay">
-                      <div class="game-details-container">
-                          <div class="game-details">
-                              <h3 class="part-name">Asphalt 9: Legends</h3>
-                              <p class="game-specs">Mobile | 10GB</p>
-                              <p class="part-price">$25</p>
-                          </div>
-                      </div>
-                      <div class="button-container">
-                        <button class="add-to-cart">Add to Cart</button>
-                        <button class="buy-now" onclick="window.location.href='404error.html'">Buy Now</button>
-                    </div>
-                  </div>
-              </div>
-
-              <!-- Game 3 -->
-              <div class="game-card part-card" id="fav-game3">
-                  <img src="./image/games/gameportrait21.webp" alt="Mirror's Edge" class="game-card-image">
-                  <div class="game-card-overlay">
-                      <div class="game-details-container">
-                          <div class="game-details">
-                              <h3 class="part-name">Mirror's Edge</h3>
-                              <p class="game-specs">Windows, Xbox, Playstation | 7GB</p>
-                              <p class="part-price">$0.99</p>
-                          </div>
-                      </div>
-                      <div class="button-container">
-                        <button class="add-to-cart">Add to Cart</button>
-                        <button class="buy-now" onclick="window.location.href='404error.html'">Buy Now</button>
-                    </div>
-                  </div>
-              </div>
-
-              <!-- Game 4 -->
-              <div class="game-card part-card" id="fav-game4">
-                  <img src="./image/games/gameportrait22.jpg" alt="Mafia Definitive" class="game-card-image">
-                  <div class="game-card-overlay">
-                      <div class="game-details-container">
-                          <div class="game-details">
-                              <h3 class="part-name">Mafia Definitive</h3>
-                              <p class="game-specs">Windows | 43GB</p>
-                              <p class="part-price">$8</p>
-                          </div>
-                      </div>
-                      <div class="button-container">
-                        <button class="add-to-cart">Add to Cart</button>
-                        <button class="buy-now" onclick="window.location.href='404error.html'">Buy Now</button>
-                    </div>
-                  </div>
-              </div>
-          </div>
-      </section>
-    </div>
-
-    <!-- ========================================================= Trending container====================================== -->
-    <div class="trending-wrapper">
-      <section id="trending-games" class="games-section">
-        <div class="trending-header">
-          <h2>Trending Games</h2>
-          <div class="slider-controls">
-            <button class="prev">←</button>
-            <button class="next">→</button>
-          </div>
-        </div>
-        <div class="trending-slider">
-          <div class="trending-grid">
-            <!-- Game 1 -->
-            <div class="game-card part-card" id="game13">
-              <img src="./image/games/gameportrait13.jpg" alt="Outlast" class="game-card-image">
-              <div class="game-card-overlay">
-                <div class="game-details-container">
-                  <div class="game-details">
-                    <h3 class="part-name">Outlast</h3>
-                    <p class="game-specs">Windows, Playstation | 17GB</p>
-                    <p class="part-price">$5</p>
-                  </div>
-                </div>
-                <div class="button-container">
-                  <button class="add-to-cart">Add to Cart</button>
-                  <button class="buy-now" onclick="window.location.href='404error.html'">Buy Now</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Game 2 -->
-            <div class="game-card part-card" id="game14">
-              <img src="./image/games/gameportrait14.webp" alt="FIFA 23" class="game-card-image">
-              <div class="game-card-overlay">
-                <div class="game-details-container">
-                  <div class="game-details">
-                    <h3 class="part-name">FIFA 23</h3>
-                    <p class="game-specs">Xbox, Playstation | 93GB</p>
-                    <p class="part-price">$29.99</p>
-                  </div>
-                </div>
-                <div class="button-container">
-                  <button class="add-to-cart">Add to Cart</button>
-                  <button class="buy-now" onclick="window.location.href='404error.html'">Buy Now</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Game 3 -->
-            <div class="game-card part-card" id="game15">
-              <img src="./image/games/gameportrait15.jpg" alt="Ghost of Tsushima" class="game-card-image">
-              <div class="game-card-overlay">
-                <div class="game-details-container">
-                  <div class="game-details">
-                    <h3 class="part-name">Ghost of Tsushima</h3>
-                    <p class="game-specs">Windows, Xbox, Playstation | 72GB</p>
-                    <p class="part-price">$9</p>
-                  </div>
-                </div>
-                <div class="button-container">
-                  <button class="add-to-cart">Add to Cart</button>
-                  <button class="buy-now" onclick="window.location.href='404error.html'">Buy Now</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Game 4 -->
-            <div class="game-card part-card" id="game16">
-              <img src="./image/games/gameportrait16.png" alt="Call of Duty: Black Ops" class="game-card-image">
-              <div class="game-card-overlay">
-                <div class="game-details-container">
-                  <div class="game-details">
-                    <h3 class="part-name">Call of Duty: Black Ops</h3>
-                    <p class="game-specs">Windows, Xbox, Playstation | 10GB</p>
-                    <p class="part-price">$0.99</p>
-                  </div>
-                </div>
-                <div class="button-container">
-                  <button class="add-to-cart">Add to Cart</button>
-                  <button class="buy-now" onclick="window.location.href='404error.html'">Buy Now</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Game 5 -->
-            <div class="game-card part-card" id="trend-game5">
-              <img src="./image/games/gameportrait27.jpg" alt="COD Black Ops II" class="game-card-image">
-              <div class="game-card-overlay">
-                <div class="game-details-container">
-                  <div class="game-details">
-                    <h3 class="part-name">COD Black Ops II</h3>
-                    <p class="game-specs">Windows, Xbox, Playstation | 10GB</p>
-                    <p class="part-price">$4.95</p>
-                  </div>
-                </div>
-                <div class="button-container">
-                  <button class="add-to-cart">Add to Cart</button>
-                  <button class="buy-now" onclick="window.location.href='404error.html'">Buy Now</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Game 6 -->
-            <div class="game-card part-card" id="trend-game6">
-              <img src="./image/games/gameportrait18.jpg" alt="Genshin Impact" class="game-card-image">
-              <div class="game-card-overlay">
-                <div class="game-details-container">
-                  <div class="game-details">
-                    <h3 class="part-name">Genshin Impact</h3>
-                    <p class="game-specs">Windows, Xbox, Playstation | 10GB</p>
-                    <p class="part-price">$0.12</p>
-                  </div>
-                </div>
-                <div class="button-container">
-                  <button class="add-to-cart">Add to Cart</button>
-                  <button class="buy-now" onclick="window.location.href='404error.html'">Buy Now</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Game 7 -->
-            <div class="game-card part-card" id="trend-game7">
-              <img src="./image/games/gameportrait17.jpg" alt="Sniper Ghost Warrior" class="game-card-image">
-              <div class="game-card-overlay">
-                <div class="game-details-container">
-                  <div class="game-details">
-                    <h3 class="part-name">Sniper Ghost Warrior</h3>
-                    <p class="game-specs">Windows, Xbox, Playstation | 10GB</p>
-                    <p class="part-price">$25</p>
-                  </div>
-                </div>
-                <div class="button-container">
-                  <button class="add-to-cart">Add to Cart</button>
-                  <button class="buy-now" onclick="window.location.href='404error.html'">Buy Now</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Game 8 -->
-            <div class="game-card part-card" id="trend-game8">
-              <img src="./image/games/gameportrait20.jpeg" alt="Asphalt 9: Legends" class="game-card-image">
-              <div class="game-card-overlay">
-                <div class="game-details-container">
-                  <div class="game-details">
-                    <h3 class="part-name">Asphalt 9: Legends</h3>
-                    <p class="game-specs">Mobile | 10GB</p>
-                    <p class="part-price">$25</p>
-                  </div>
-                </div>
-                <div class="button-container">
-                  <button class="add-to-cart">Add to Cart</button>
-                  <button class="buy-now" onclick="window.location.href='404error.html'">Buy Now</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Game 9 -->
-            <div class="game-card part-card" id="trend-game9">
-              <img src="./image/games/gameportrait21.webp" alt="Mirror's Edge" class="game-card-image">
-              <div class="game-card-overlay">
-                <div class="game-details-container">
-                  <div class="game-details">
-                    <h3 class="part-name">Mirror's Edge</h3>
-                    <p class="game-specs">Windows, Xbox, Playstation | 7GB</p>
-                    <p class="part-price">$0.99</p>
-                  </div>
-                </div>
-                <div class="button-container">
-                  <button class="add-to-cart">Add to Cart</button>
-                  <button class="buy-now" onclick="window.location.href='404error.html'">Buy Now</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Game 10 -->
-            <div class="game-card part-card" id="trend-game10">
-              <img src="./image/games/gameportrait22.jpg" alt="Mafia Definitive" class="game-card-image">
-              <div class="game-card-overlay">
-                <div class="game-details-container">
-                  <div class="game-details">
-                    <h3 class="part-name">Mafia Definitive</h3>
-                    <p class="game-specs">Windows | 43GB</p>
-                    <p class="part-price">$8</p>
-                  </div>
-                </div>
-                <div class="button-container">
-                  <button class="add-to-cart">Add to Cart</button>
-                  <button class="buy-now" onclick="window.location.href='404error.html'">Buy Now</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Game 11 -->
-            <div class="game-card part-card" id="trend-game11">
-              <img src="./image/games/gameportrait24.avif" alt="Pubg Lite" class="game-card-image">
-              <div class="game-card-overlay">
-                <div class="game-details-container">
-                  <div class="game-details">
-                    <h3 class="part-name">Pubg Lite</h3>
-                    <p class="game-specs">Windows | 14GB</p>
-                    <p class="part-price">$2</p>
-                  </div>
-                </div>
-                <div class="button-container">
-                  <button class="add-to-cart">Add to Cart</button>
-                  <button class="buy-now" onclick="window.location.href='404error.html'">Buy Now</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Game 12 -->
-            <div class="game-card part-card" id="trend-game12">
-              <img src="./image/games/gameportrait25.jpeg" alt="Pubg New State" class="game-card-image">
-              <div class="game-card-overlay">
-                <div class="game-details-container">
-                  <div class="game-details">
-                    <h3 class="part-name">Pubg New State</h3>
-                    <p class="game-specs">Windows, Mobile | 11GB</p>
-                    <p class="part-price">$2</p>
-                  </div>
-                </div>
-                <div class="button-container">
-                  <button class="add-to-cart">Add to Cart</button>
-                  <button class="buy-now" onclick="window.location.href='404error.html'">Buy Now</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-</main>
-    
+    </main>
     <footer>
-      <div class="footer-container">
-          <div class="footer-content">
-              <div class="footer-logo">
-                  <img src="./image/logo/logo.png" alt="Gaming Logo">
-              </div>
-              <div class="footer-links">
-                  <a href="404error.html">Terms & Policy</a>
-                  <a href="404error.html">Privacy Policy</a>
-                  <a href="404error.html">Cookie Policy</a>
-                  <a href="404error.html">Contact us</a>
-              </div>
-              <div class="social-links">
-                  <a href="404error.html" aria-label="Twitch">
-                      <i class="fab fa-twitch"></i>
-                  </a>
-                  <a href="404error.html" aria-label="Facebook">
-                      <i class="fab fa-facebook"></i>
-                  </a>
-                  <a href="404error.html" aria-label="Twitter">
-                      <i class="fab fa-twitter"></i>
-                  </a>
-                  <a href="404error.html" aria-label="Instagram">
-                      <i class="fab fa-instagram"></i>
-                  </a>
-                  <a href="404error.html" aria-label="YouTube">
-                      <i class="fab fa-youtube"></i>
-                  </a>
-              </div>
-          </div>
-          <div class="copyright">
-              <p>Copyright © 2025 All Rights Reserved.</p>
-          </div>
-      </div>
-      </footer>
-      </body>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="./image/logo/logo.png" alt="Gaming Logo">
+                </div>
+                <div class="footer-links">
+                    <a href="404error.html">Terms & Policy</a>
+                    <a href="404error.html">Privacy Policy</a>
+                    <a href="404error.html">Cookie Policy</a>
+                    <a href="404error.html">Contact us</a>
+                </div>
+                <div class="social-links">
+                    <a href="404error.html" aria-label="Twitch">
+                        <i class="fab fa-twitch"></i>
+                    </a>
+                    <a href="404error.html" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="404error.html" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="404error.html" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="404error.html" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                  </div>
+            </div>
+            <div class="copyright">
+                <p>Copyright © 2025 All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
 </html>
