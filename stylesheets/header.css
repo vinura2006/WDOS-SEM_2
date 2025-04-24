@@ -212,7 +212,7 @@
 }
 
 .mobile-nav-list li {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .mobile-nav-list li a {
@@ -224,10 +224,13 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+
 .mobile-nav-actions {
-    padding: 20px 30px;
+    padding: 0 30px 20px;
     margin-top: auto;
+    margin-bottom: 20px;
 }
+
 
 .mobile-action-btn {
     display: flex;
@@ -281,7 +284,7 @@
     }
 }
 
-/* Cart button and tythe user profile active navigation styles*/
+/* Cart button and tythe user profile active*/
 .cart-btn.active, .user-btn.active {
     color: var(--primary-color);
     background: rgba(255, 69, 0, 0.1);
@@ -296,10 +299,5 @@
     font-weight: bold;
 }
 
-.mobile-nav-list li:nth-last-child(1) a {
-    padding: 8px 0; 
-}
 
-.mobile-nav-actions .mobile-action-btn:first-child {
-    padding: 8px;
-}
+
