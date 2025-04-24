@@ -209,6 +209,7 @@
 .mobile-nav-list {
     list-style: none;
     padding: 30px 30px 20px;
+    margin-bottom: -10px; 
 }
 
 .mobile-nav-list li {
@@ -227,7 +228,7 @@
 
 .mobile-nav-actions {
     padding: 0 30px 20px;
-    margin-top: auto;
+    margin-top: 20px; 
     margin-bottom: 20px;
 }
 
