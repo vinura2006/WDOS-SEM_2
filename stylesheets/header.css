@@ -295,3 +295,11 @@
     background: rgba(255, 69, 0, 0.1);
     font-weight: bold;
 }
+
+.mobile-nav-list li:nth-last-child(1) a {
+    padding: 8px 0; 
+}
+
+.mobile-nav-actions .mobile-action-btn:first-child {
+    padding: 8px;
+}
