@@ -1,10 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const hamburgerBtn = document.querySelector('.hamburger-btn');
-    const topNav = document.querySelector('.top-nav');
-    const platformNav = document.querySelector('.platform-nav');
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const mobileNav = document.getElementById('mobileNav');
     
+    // Toggle the mobile nav
     hamburgerBtn.addEventListener('click', function() {
-        topNav.classList.toggle('hamburger-menu');
-        platformNav.classList.toggle('hamburger-menu');
+        mobileNav.classList.add('active');
+    });
+    
+    // To close the nav manu when close button clicked
+    closeBtn.addEventListener('click', function() {
+        mobileNav.classList.remove('active');
     });
 });
